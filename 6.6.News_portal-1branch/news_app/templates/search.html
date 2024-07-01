@@ -1,0 +1,23 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+{% block content %}
+    <h2>Search in posts</h2>
+    <h3>{{ time_in|date:'d.m.Y' }}</h3>
+    <form action="" method="get">
+        {{ filterset.form.as_p }}
+        <input type="submit" value="Search"/>
+    </form>
+    {% for post in search %}
+     <div>
+     {{ post.author }}
+     {{ post.title }}
+     {{ post.time_in|date:'d.m.Y' }}
+     {{ post.content|truncatechars:20 }}
+     {{ post.get_post_kind_display }}
+     </div>
+    {% endfor %}
+{% endblock content %}

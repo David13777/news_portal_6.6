@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Please find attached the new posts for the week!</h2>
+<ul>
+    {% for post in post %}
+        <li><a> href="{{ link }}{{ post.get.absolute.erl }}{{ post.title }}"</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
